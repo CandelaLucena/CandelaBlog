@@ -27,39 +27,40 @@
 					</ul>
 				</div>
 				<div class="col-md-8 animate-box">
-					<form action="#">
+					{{ form_start(form, {'attr': {'class':'form-horizontal'}}) }}
+					{{ form_errors(form) }}
 						<div class="form-group row">
 							<div class="col-md-6 field">
-								<label for="firstname">First Name</label>
-								<input type="text" name="FName" id="firstname" class="form-control">
+								{{ form_row(form.firstName, {'attr': {'class':'form-control'}}) }}
 							</div>
 							<div class="col-md-6 field">
-								<label for="lastname">Last Name</label>
-								<input type="text" name="FName" id="lastname" class="form-control">
+								{{ form_row(form.lastName, {'attr': {'class':'form-control'}}) }}
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-6 field">
-								<label for="email">Email</label>
-								<input type="text" name="FName" id="email" class="form-control">
+								{{ form_row(form.email, {'attr': {'class':'form-control'}}) }}
 							</div>
 							<div class="col-md-6 field">
-								<label for="phone">Phone</label>
-								<input type="text" name="FName" id="phone" class="form-control">
+								{{ form_row(form.phone, {'attr': {'class':'form-control'}}) }}
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12 field">
-								<label for="message">Message</label>
-								<textarea name="message" id="message" cols="30" rows="10" class="form-control"></textarea>
+								{{ form_row(form.subject, {'attr': {'class':'form-control'}}) }}	
 							</div>
 						</div>
 						<div class="form-group row">
 							<div class="col-md-12 field">
-								<input type="submit" id="submit" class="btn btn-primary" value="Send Message">
+								{{ form_row(form.message, {'attr': {'class':'form-control'}}) }}	
 							</div>
 						</div>
-					</form>
+						<div class="form-group row">
+							<div class="col-md-12 field">
+								{{ form_row(form.Send, {'attr': {'class':'pull-right btn btn-lg sr-button'}}) }}
+							</div>
+						</div>
+					{{ form_end(form) }}
 				</div>
 			</div>
 		</div>

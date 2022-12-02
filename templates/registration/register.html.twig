@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/intro.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 float-overlay">
+							<h2>Registro</h2>
+							<h3>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    <div class="col-md-8 animate-box">
+
+        {{ form_start(registrationForm, {'attr': {'class':'form-horizontal'}}) }}
+            <div class="form-group row">
+                <div class="col-md-12 field">
+                    {{ form_row(registrationForm.name, {'attr': {'class':'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12 field">
+                    {{ form_row(registrationForm.email, {'attr': {'class':'form-control'}}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12 field">
+                    {{ form_row(registrationForm.plainPassword, {'attr': {'class':'form-control'}}, {label: 'Password'}) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12 field">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-12 field">
+                    <button type="submit" class="pull-right btn btn-lg sr-button">Register</button>
+                </div>
+            </div>
+        {{ form_end(registrationForm) }}
+
+    </div>
+{% endblock %}

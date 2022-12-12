@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title%}Images{% endblock %}
+{% block body%}
+		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/intro.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 float-overlay">
+							<h2>Admin</h2>
+							<h3>Images</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+			<div id="images">
+				<div class="container">
+					<div class="col-xs-12 col-sm-8 col-sm-push-2">
+						<h1>Images</h1>
+						{{ form(form, {'attr': {'class':'form-horizontal'}}) }}
+						<hr class="divider">
+					</div>   
+				</div>
+			</div>
+
+			<br>
+			<div class="container">
+				<div class="row">
+					{% for image in images %}
+						<div class="col-sm-12">
+							{{ image.id }}
+							
+							<img style='width:150px;' src='{{ asset('images/index/gallery/' ~ image.file) }}'>
+							
+							Views{{ image.numViews }}
+							
+							Likes{{ image.numLikes }}
+							
+							Dowloads{{ image.numDowloads }}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		
+{% endblock %}

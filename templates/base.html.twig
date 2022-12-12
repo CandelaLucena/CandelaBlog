@@ -43,16 +43,16 @@
 	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 	
 	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="{{ asset("css/animate.css") }}">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="{{ asset("css/icomoon.css") }}">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="{{ asset("css/bootstrap.css") }}">
 	<!-- Owl Carousel -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="{{ asset("css/owl.carousel.min.css") }}">
+	<link rel="stylesheet" href="{{ asset("css/owl.theme.default.min.css") }}">
 
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="{{ asset("css/style.css") }}">
 
 
 	<!-- Modernizr JS -->
@@ -71,13 +71,10 @@
 		  	</div>
 		</header>
 		<!-- END: header -->
-
     {% block body %}
 
 
     {% endblock %} 
-
-
 		<footer>
 			<div id="footer">
 				<div class="container">
@@ -104,14 +101,12 @@
 	<!-- Bootstrap -->
 	<script src="js/bootstrap.min.js"></script>
 	<!-- Owl carousel -->
-		<script src="js/owl.carousel.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Parallax Stellar -->
 	<script src="js/jquery.stellar.min.js"></script>
-
 	<!-- Main JS (Do not remove) -->
 	<script src="js/main.js"></script>
-
 	</body>
 </html>

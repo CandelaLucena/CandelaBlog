@@ -6,24 +6,23 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 float-overlay">
-							<h2>Titulo</h2>
-							<h3>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</h3>
+							<h2>{{post.title}}</h2>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		{{asset('images/blog/' ~ post.image) }}
+
 		<div class="animate-box">
 			<div class="blog_section_2">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="section_1">
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                            BLABLABLA There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                            BLABLABLA There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
-                            BLABLABLA</p>
+							<p>{{post.content}}</p>
 							<div>
-								<a class="btn" href="single_post.html" style="width: 70%">Posted by user1 in 16 Julio 2019</a>
+								<a class="btn" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
 								<img src="images/comment.png" style="width: 20px;"> 10
 								<img src="images/favorite.png" style="width: 20px;"> 10
 							</div>

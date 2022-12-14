@@ -9,13 +9,17 @@ use Doctrine\Persistence\ManagerRegistry;
 use App\Entity\Contact;
 use Symfony\Component\HttpFoundation\Request;
 use App\Form\ContactFormType;
+use App\Entity\Image;
 
 class PageController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(): Response
+    public function index(ManagerRegistry $doctrine, Request $request): Response
     {
-        return $this->render('page/index.html.twig', []);
+        $repository = $doctrine->getRepository(Image::class);
+        $images = $repository->findAll();
+    
+        return $this->render('page/index.html.twig', array('images' => $images));
     }
 
     #[Route('/about', name: 'about')]

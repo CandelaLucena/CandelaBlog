@@ -60,4 +60,24 @@ class AdminController extends AbstractController
                     'images' => $images   
                 )); 
     }
+
+    #[Route('/admin/images/{id}', name: 'app_images_borrar')]
+    public function delete(ManagerRegistry $doctrine, $id): Response{
+        $entityManager = $doctrine->getManager();
+        $repositorio = $doctrine->getRepository(Image::class);
+        $imagen = $repositorio->find($id);
+        if ($imagen){           
+            try
+            {
+                $entityManager->remove($imagen);
+                $entityManager->flush();
+                return new Response("Contacto eliminado");
+            } catch (\Exception $e) {
+                return new Response("Error eliminado objeto");
+            }  
+        }else
+            return $this->render('admin/images.html.twig', [
+                'imagen' => null
+            ]);  
+    }
 }

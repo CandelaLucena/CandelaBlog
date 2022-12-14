@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block title %}New Post{% endblock %}
+{% block body %}
+
+		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/intro.jpg);">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 float-overlay">
+							<h2>New Post</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+   <div id="new Post">
+   	  <div class="container">
+   	    <div class="col-xs-12 col-sm-8 col-sm-push-2">
+       	   {{ form_row(form.title, {'attr': {'class':'form-control'}}) }}
+           {{ form_row(form.content, {'attr': {'class':'form-control'}}) }}
+           {{ form_row(form.file, {'attr': {'class':'form-control'}}) }}
+		    {{ form_row(form.Send, {'attr': {'class':'pull-right btn btn-lg sr-button'}}) }}
+		</div>   
+   	  </div>
+   </div>
+<!-- Principal Content Start -->
+{% endblock %}

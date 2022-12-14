@@ -38,6 +38,8 @@
 							Likes{{ image.numLikes }}
 							
 							Dowloads{{ image.numDowloads }}
+
+							<a href="{{ path('app_images_borrar', {'id': image.id}) }}">Borrar Imagen</a>
 						</div>
 					{% endfor %}
 				</div>

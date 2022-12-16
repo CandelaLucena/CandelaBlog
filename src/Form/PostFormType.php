@@ -17,8 +17,7 @@ class PostFormType extends AbstractType
         $builder
             ->add('title' , null, ['attr' => ['class'=>'form-control']])
             ->add('content' , null, ['attr' => ['class'=>'form-control']])
-            ->add('image' , null, ['attr' => ['class'=>'form-control']])
-            ->add('file', FileType::class,[
+            ->add('image', FileType::class,[
                 'mapped' => false,
                 'constraints' => [
                     new File([
@@ -29,7 +28,7 @@ class PostFormType extends AbstractType
                         'mimeTypesMessage' => 'Please upload a valid image file',
                     ])
                 ],
-            ], ['required' => true])
+            ])
             ->add('Send', SubmitType::class, ['attr' => ['class'=>'pull-right btn btn-lg sr-button']]);
         ;
     }

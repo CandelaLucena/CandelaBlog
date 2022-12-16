@@ -2,7 +2,7 @@
 {% block title %}Single Post{% endblock %}
 {% block body %}
 		<div id="fh5co-intro-section" class="section-overlay animate-box" data-animate-effect="fadeIn">
-			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/intro.jpg);">
+			<div class="fh5co-intro-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url({{asset('images/index/gallery/' ~ post.image) }});">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-8 col-md-offset-2 float-overlay">
@@ -13,18 +13,16 @@
 			</div>
 		</div>
 
-		{{asset('images/blog/' ~ post.image) }}
-
 		<div class="animate-box">
 			<div class="blog_section_2">
 				<div class="row">
 					<div class="col-sm-12">
 						<div class="section_1">
-							<p>{{post.content}}</p>
+							<p style="word-break: break-all">{{post.content}}</p>
 							<div>
-								<a class="btn" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
-								<img src="images/comment.png" style="width: 20px;"> 10
-								<img src="images/favorite.png" style="width: 20px;"> 10
+								<a href="{{ path('single_post', {'slug': post.slug}) }}" class="btn" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
+								<img src="{{asset('images//comment.png')}}" style="width: 20px;"> {{ post.numComments }}
+								<img src="{{asset('images//favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
 							</div>
 						</div>
 					</div>
@@ -50,24 +48,16 @@
 					</div>
                     <div class="col-sm-6">
                         <h2>Post recientes</h2>
+						{% for post in posts %}
                         <div class="section_1">
-                            <h3>Post1</h3>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                            <h3>{{post.title}}</h3>
 							<div>
-								<a class="btn" href="single_post.html" style="width: 70%">Posted by user1 in 16 Julio 2019</a>
-								<img src="images/comment.png" style="width: 20px;"> 10
-								<img src="images/favorite.png" style="width: 20px;"> 10
+								<a href="{{ path('single_post', {'slug': post.slug}) }}" class="btn" href="single_post.html" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
+								<img src="{{asset('images//comment.png')}}" style="width: 20px;"> {{ post.numComments }}
+								<img src="{{asset('images//favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
 							</div>
                         </div>
-                        <div class="section_1">
-                            <h3>Post2</h3>
-							<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
-							<div>
-								<a class="btn" href="single_post.html" style="width: 70%">Posted by user1 in 16 Julio 2019</a>
-								<img src="images/comment.png" style="width: 20px;"> 10
-								<img src="images/favorite.png" style="width: 20px;"> 10
-							</div>
-						</div>
+						{% endfor %}
                     </div>
                 </div>
 			</div>

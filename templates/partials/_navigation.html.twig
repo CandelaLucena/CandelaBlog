@@ -14,6 +14,7 @@
 								<li class="{{ (app.request.attributes.get('_route') == 'about')  ? 'active': ''}}"><a href="{{ path('about') }}">About</a></li>
 								<li class="{{ (app.request.attributes.get('_route') == 'contact')  ? 'active': ''}}"><a href="{{ path('contact') }}">Contact</a></li>
 								{% if app.user %}
+									<li class="{{ (app.request.attributes.get('_route') == 'new_post')  ? 'active': ''}}"><a href="{{ path('new_post') }}"><i class="fa fa-plus-square sr-icons"></i> New post</a></li>
 									<li><a href="{{ path('app_logout') }}"><i class="fa fa-sign-out sr-icons"></i> {{ app.user.name }} - Logout</a></li>
 								{% else %}
 									<li class="{{ (app.request.attributes.get('_route') == 'app_login')  ? 'active': ''}} lien"><a href="{{ path('app_login') }}"><i class="fa fa-sign-in sr-icons"></i> Login</a></li>

@@ -21,8 +21,9 @@
 							<p style="word-break: break-all">{{post.content}}</p>
 							<div>
 								<a href="{{ path('single_post', {'slug': post.slug}) }}" class="btn" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
-								<img src="{{asset('images//comment.png')}}" style="width: 20px;"> {{ post.numComments }}
-								<img src="{{asset('images//favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
+								<img src="{{asset('images/comment.png')}}" style="width: 20px;"> {{ post.numComments }}
+								<img src="{{asset('images/favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
+								<a href="{{ path('post_like', {slug: post.slug}) }}">LIKE</a></i>
 							</div>
 						</div>
 					</div>
@@ -50,8 +51,8 @@
                             <h3>{{post.title}}</h3>
 							<div>
 								<a href="{{ path('single_post', {'slug': post.slug}) }}" class="btn" href="single_post.html" style="width: 70%">Posted by {{post.postUser.name}} in {{post.publishedAt | date('d') }} {{ post.publishedAt | date('F') }}</a>
-								<img src="{{asset('images//comment.png')}}" style="width: 20px;"> {{ post.numComments }}
-								<img src="{{asset('images//favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
+								<img src="{{asset('images/comment.png')}}" style="width: 20px;"> {{ post.numComments }}
+								<img src="{{asset('images/favorite.png')}}" style="width: 20px;"> {{post.numLikes}}
 							</div>
                         </div>
 						{% endfor %}
